@@ -1,4 +1,4 @@
-function get_todos() {
+function get_todos() {              //  to save todo items in an array
     var todos = new Array;
     var todos_str = localStorage.getItem('todo');
     if (todos_str !== null) {
@@ -19,7 +19,7 @@ function add() {
     return false;
 }
 
-function remove() {
+function remove() {                     //remove  todo items
     var id = this.getAttribute('id');
     var todos = get_todos();
     todos.splice(id, 1);
@@ -30,7 +30,7 @@ function remove() {
     return false;
 }
 
-function show() {
+function show() {               //to print stuff
     var todos = get_todos();
 
     var html = '<ul>';
@@ -46,6 +46,6 @@ function show() {
         buttons[i].addEventListener('click', remove);
     };
 }
-
+//add element in list
 document.getElementById('add').addEventListener('click', add);
 show();
